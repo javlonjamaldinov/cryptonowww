@@ -36,8 +36,8 @@ class _CalculatorWidgetState extends State<CalculatorWidget> {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
-        crossAxisSpacing: 70, // Reduced space between columns
-        mainAxisSpacing: 15, // Reduced space between rows
+        crossAxisSpacing: 70,
+        mainAxisSpacing: 15,
       ),
       shrinkWrap: true,
       padding: const EdgeInsets.all(10),
@@ -65,7 +65,7 @@ class _CalculatorWidgetState extends State<CalculatorWidget> {
             buttonValue,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 20.sp, // Increased font size for better readability
+              fontSize: 20.sp,
             ),
           ),
         );
