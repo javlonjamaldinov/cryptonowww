@@ -25,7 +25,7 @@ class _NavbarViewState extends State<NavbarView> {
       body: views[_currentIndex],
       backgroundColor: const Color(0xff0A1336),
       bottomNavigationBar: SizedBox(
-        height: 10.h,
+        height: 13.h,
         child: BottomNavigationBar(
           currentIndex: _currentIndex,
           showUnselectedLabels: true,

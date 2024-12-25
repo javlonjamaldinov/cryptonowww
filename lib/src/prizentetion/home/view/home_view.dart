@@ -1,10 +1,39 @@
-import 'package:cryptonow/src/prizentetion/prizentation.dart';
+import 'package:cryptonow/src/prizentetion/home/view/currency_container.dart';
+import 'package:cryptonow/src/prizentetion/home/view/view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  _HomeViewState createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  String _output = "\$ 0";
+
+  void _buttonPressed(String value) {
+    setState(() {
+      if (value == "C") {
+        _output = "\$ 0";
+      } else if (value == "<") {
+        if (_output.length > 3) {
+          // Account for "$ " prefix
+          _output = _output.substring(0, _output.length - 1);
+        } else {
+          _output = "\$ 0";
+        }
+      } else {
+        if (_output == "\$ 0") {
+          _output = "\$ $value";
+        } else {
+          _output += value;
+        }
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +53,16 @@ class HomeView extends StatelessWidget {
             ),
             const Spacer(),
             GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Btsgraph(),
-                    ),
-                  );
-                },
-                child: SvgPicture.asset('assets/svg/svg1.svg')),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Btsgraph(),
+                  ),
+                );
+              },
+              child: SvgPicture.asset('assets/svg/svg1.svg'),
+            ),
             SizedBox(
               width: 8.w,
             ),
@@ -45,8 +75,8 @@ class HomeView extends StatelessWidget {
         children: [
           Column(
             children: [
-              const CurrencyContainer(
-                amount: '\$ 0',
+              CurrencyContainer(
+                amount: _output,
                 imagePath: 'assets/images/im5.png',
                 currencyName: 'US Dollar',
               ),
@@ -54,7 +84,7 @@ class HomeView extends StatelessWidget {
                 height: 2.h,
               ),
               const CryptoContainer(
-                amount: '0  bts',
+                amount: "0 bts",
                 imagePath: 'assets/images/im6.png',
                 currencyName: 'Bitcoin (BTC)',
               ),
@@ -79,7 +109,58 @@ class HomeView extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const CalculatorWidget(),
+      bottomNavigationBar: CalculatorWidget(
+        onButtonPressed: _buttonPressed,
+      ),
+    );
+  }
+}
+
+class CalculatorWidget extends StatelessWidget {
+  final void Function(String) onButtonPressed;
+
+  const CalculatorWidget({super.key, required this.onButtonPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    final buttonValues = [
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      '.',
+      '0',
+      '<'
+    ];
+
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        crossAxisSpacing: 70,
+        mainAxisSpacing: 15,
+      ),
+      shrinkWrap: true,
+      padding: const EdgeInsets.all(10),
+      itemCount: buttonValues.length,
+      itemBuilder: (context, index) {
+        final buttonValue = buttonValues[index];
+
+        return TextButton(
+          onPressed: () => onButtonPressed(buttonValue),
+          child: Text(
+            buttonValue,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20.sp,
+            ),
+          ),
+        );
+      },
     );
   }
 }

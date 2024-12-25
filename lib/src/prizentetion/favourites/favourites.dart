@@ -1,7 +1,8 @@
-import 'package:cryptonow/src/prizentetion/favourites/add_favourite/addfavourite.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+
+import '../prizentation.dart';
 
 class Favourites extends StatelessWidget {
   const Favourites({super.key});
@@ -55,9 +56,11 @@ class Favourites extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AddFavourite()));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Addfavourite(),
+                    ),
+                  );
                 },
                 child: Container(
                   height: 7.h,

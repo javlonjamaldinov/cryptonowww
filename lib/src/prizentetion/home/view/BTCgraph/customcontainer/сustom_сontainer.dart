@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -54,28 +53,27 @@ class CustomContainer extends StatelessWidget {
                     children: [
                       Image.asset(
                         imagePath,
-                        height: 50,
-                        width: 50,
+                        height: 8.h,
+                        width: 8.w,
                       ),
                       SizedBox(width: 2.w),
                       Text(
                         currencyPair,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white38,
-                          fontSize: 15,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 1.h),
                   Row(
                     children: [
                       Text(
                         btcAmount,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -87,9 +85,9 @@ class CustomContainer extends StatelessWidget {
                       SizedBox(width: 2.w),
                       Text(
                         price,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -123,12 +121,12 @@ class CustomContainer extends StatelessWidget {
             children: [
               SvgPicture.asset('assets/svg/svg53.svg'),
               SizedBox(width: 3.w),
-              const Text(
+              Text(
                 'Last updated: 23 nov 2024 11:52',
                 style: TextStyle(
-                  color: Colors.white38,
-                  fontWeight: FontWeight.w500,
-                ),
+                    color: Colors.white38,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 15.sp),
               ),
             ],
           ),

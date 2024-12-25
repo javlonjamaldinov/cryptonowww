@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import '../../../ui/customcontainer/сustom_сontainer.dart';
+import 'customcontainer/сustom_сontainer.dart';
 import '../../../ui/tabbar_code/tabbarcode.dart';
 
 class Btsgraph extends StatelessWidget {
