@@ -1,5 +1,5 @@
 import 'package:cryptonow/src/components/navbar/navbar.dart';
-import 'package:cryptonow/src/prizentetion/ui/UnbordingCode.dart';
+import 'package:cryptonow/src/prizentetion/ui/Unbording_code.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -34,19 +34,19 @@ class _UnbordingState extends State<Unbording> {
                 return Stack(
                   children: [
                     Positioned(
-                      top: 40,
-                      left: 65,
+                      top: 25.sp,
+                      left: 35.sp,
                       child: Text(
                         contents[i].title,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
-                          fontSize: 33,
+                          fontSize: 23.sp,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
                     ),
                     Positioned(
-                      top: 120,
+                      top: 45.sp,
                       child: SizedBox(
                         height: 75.h,
                         child: Image.asset(
@@ -58,7 +58,7 @@ class _UnbordingState extends State<Unbording> {
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
-                        height: 10.5.h,
+                        height: 10.h,
                         width: double.infinity,
                         decoration: const BoxDecoration(
                           color: Color(0xff0A1336),

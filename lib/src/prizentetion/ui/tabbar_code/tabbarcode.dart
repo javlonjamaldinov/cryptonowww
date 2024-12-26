@@ -11,7 +11,7 @@ class Tabbarcode extends StatelessWidget {
       height: 8.h,
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-      padding: const EdgeInsets.all(8),
+      padding: EdgeInsets.all(8.sp),
       decoration: BoxDecoration(
         color: const Color(0xff0A1336),
         borderRadius: BorderRadius.circular(30),
@@ -34,10 +34,10 @@ class Tabbarcode extends StatelessWidget {
                 SizedBox(
                   width: 1.5.w,
                 ),
-                const Text(
+                Text(
                   'Exchanger',
                   style: TextStyle(
-                    fontSize: 13,
+                    fontSize: 13.sp,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -52,10 +52,10 @@ class Tabbarcode extends StatelessWidget {
                 SizedBox(
                   width: 1.5.w,
                 ),
-                const Text(
+                Text(
                   'User',
                   style: TextStyle(
-                    fontSize: 13,
+                    fontSize: 13.sp,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

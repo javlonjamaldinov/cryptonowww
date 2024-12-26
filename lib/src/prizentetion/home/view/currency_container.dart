@@ -1,6 +1,6 @@
-import 'package:cryptonow/src/prizentetion/prizentation.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import '../../choosecrypto/choose_crypto.dart';
 
 class CurrencyContainer extends StatelessWidget {
   final String amount;
@@ -33,7 +33,7 @@ class CurrencyContainer extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     backgroundImage: AssetImage(imagePath),
-                    radius: 15,
+                    radius: 15.sp,
                   ),
                   SizedBox(
                     width: 3.w,

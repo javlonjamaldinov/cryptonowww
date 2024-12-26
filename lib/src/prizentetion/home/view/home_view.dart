@@ -139,10 +139,10 @@ class CalculatorWidget extends StatelessWidget {
     ];
 
     return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
-        crossAxisSpacing: 70,
-        mainAxisSpacing: 15,
+        crossAxisSpacing: 35.sp,
+        mainAxisSpacing: 18.sp,
       ),
       shrinkWrap: true,
       padding: const EdgeInsets.all(10),

@@ -1,7 +1,7 @@
-import 'package:cryptonow/src/prizentetion/ui/choosecryptoCode.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'choosecrypto_code.dart';
 
 class ChooseCrypto extends StatefulWidget {
   const ChooseCrypto({super.key});
@@ -37,7 +37,7 @@ class _ChooseCryptoState extends State<ChooseCrypto> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.all(16.0.sp),
+              padding: EdgeInsets.all(16.sp),
               child: Container(
                 decoration: BoxDecoration(
                   color: const Color(0xff1C2033),
@@ -45,13 +45,13 @@ class _ChooseCryptoState extends State<ChooseCrypto> {
                 ),
                 child: TextField(
                   style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(
+                        horizontal: 16.sp, vertical: 15.sp),
                     hintText: 'Search',
-                    hintStyle: TextStyle(color: Colors.grey),
+                    hintStyle: const TextStyle(color: Colors.grey),
                     border: InputBorder.none,
-                    prefixIcon: Icon(Icons.search, color: Colors.grey),
+                    prefixIcon: const Icon(Icons.search, color: Colors.grey),
                   ),
                   onChanged: (value) => setState(() => searchText = value),
                 ),
@@ -72,7 +72,7 @@ class _ChooseCryptoState extends State<ChooseCrypto> {
                 bool isSelected = selectedIndex == i;
                 return Padding(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 16.0.sp, vertical: 1.h),
+                      EdgeInsets.symmetric(horizontal: 16.sp, vertical: 1.h),
                   child: GestureDetector(
                     onTap: () => setState(() => selectedIndex = i),
                     child: Container(

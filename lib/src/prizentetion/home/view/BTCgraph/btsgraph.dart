@@ -1,3 +1,4 @@
+import 'package:cryptonow/src/prizentetion/interesting/interesting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -34,10 +35,17 @@ class Btsgraph extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              SvgPicture.asset('assets/svg/svg50.svg'),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Interesting()));
+                  },
+                  child: SvgPicture.asset('assets/svg/svg50.svg')),
             ],
           ),
-          toolbarHeight: 90,
+          toolbarHeight: 60,
         ),
         body: const Column(
           children: [
