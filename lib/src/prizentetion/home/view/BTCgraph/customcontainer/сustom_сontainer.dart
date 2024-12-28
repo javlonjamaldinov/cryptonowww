@@ -45,7 +45,7 @@ class CustomContainer extends StatelessWidget {
               ],
             ),
             child: Padding(
-              padding: EdgeInsets.only(bottom: 10.sp, left: 15.sp),
+              padding: EdgeInsets.only(bottom: 15.sp, left: 20.sp),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -102,7 +102,7 @@ class CustomContainer extends StatelessWidget {
                           color: change.startsWith('-')
                               ? const Color(0xffFF1317)
                               : const Color(0xff17FF13),
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),

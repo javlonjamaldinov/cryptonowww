@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-
 import '../prizentation.dart';
 
 class Favourites extends StatelessWidget {
@@ -12,6 +11,7 @@ class Favourites extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xff04091D),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color(0xff04091D),
         title: Row(
           children: [
@@ -30,58 +30,39 @@ class Favourites extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.sp),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'No favourites',
+        child: const Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.all(15.sp),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Addfavourite(),
+              ),
+            );
+          },
+          child: Container(
+            height: 7.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: const Color(0xff4674FF),
+              borderRadius: BorderRadius.circular(40),
+            ),
+            child: Center(
+              child: Text(
+                'Add favourite',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 22.sp,
-                  fontWeight: FontWeight.w700,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-              Text(
-                'Add new favourite info to fill up this screen',
-                style: TextStyle(
-                  color: Colors.white38,
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(
-                height: 2.h,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Addfavourite(),
-                    ),
-                  );
-                },
-                child: Container(
-                  height: 7.h,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff4674FF),
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Add favourite',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
         ),
       ),

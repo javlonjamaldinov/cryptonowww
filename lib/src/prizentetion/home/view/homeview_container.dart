@@ -21,7 +21,7 @@ class CurrencyContainer extends StatelessWidget {
         height: 15.h,
         width: 93.w,
         decoration: BoxDecoration(
-          color: const Color(0xff0A1336),
+          color: const Color(0xff0A1336),     
           borderRadius: BorderRadius.circular(30),
         ),
         child: Padding(
@@ -55,7 +55,7 @@ class CurrencyContainer extends StatelessWidget {
                 amount,
                 style: TextStyle(
                   color: const Color(0xff666666),
-                  fontSize: 19.sp,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -98,7 +98,7 @@ class CryptoContainer extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     backgroundImage: AssetImage(imagePath),
-                    radius: 15,
+                    radius: 15.sp,
                   ),
                   SizedBox(
                     width: 3.w,
@@ -117,12 +117,14 @@ class CryptoContainer extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ChooseCrypto()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ChooseCrypto(),
+                        ),
+                      );
                     },
                     child: Icon(
-                      Icons.arrow_drop_down_sharp,
+                      Icons.expand_more_outlined,
                       color: const Color(0xff4674FF),
                       size: 20.sp,
                     ),
@@ -136,7 +138,7 @@ class CryptoContainer extends StatelessWidget {
                 amount,
                 style: TextStyle(
                   color: const Color(0xff666666),
-                  fontSize: 19.sp,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),

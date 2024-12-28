@@ -21,7 +21,7 @@ class _UnbordingState extends State<Unbording> {
       body: Column(
         children: [
           SizedBox(
-            height: 85.h,
+            height: 86.h,
             child: PageView.builder(
               controller: _pageController,
               onPageChanged: (int index) {
@@ -33,22 +33,27 @@ class _UnbordingState extends State<Unbording> {
               itemBuilder: (_, i) {
                 return Stack(
                   children: [
-                    Positioned(
-                      top: 25.sp,
-                      left: 35.sp,
-                      child: Text(
-                        contents[i].title,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 23.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 30.sp),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            contents[i].title,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 23.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Positioned(
                       top: 45.sp,
                       child: SizedBox(
                         height: 75.h,
+                        width: 100.w,
                         child: Image.asset(
                           contents[i].image,
                           fit: BoxFit.cover,

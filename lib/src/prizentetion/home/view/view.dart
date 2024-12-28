@@ -1,3 +1,4 @@
 export 'home_view.dart';
 export 'BTCgraph/btsgraph.dart';
-export 'currency_container.dart';
+export 'homeview_container.dart';
+export 'calculator/calculator.dart';

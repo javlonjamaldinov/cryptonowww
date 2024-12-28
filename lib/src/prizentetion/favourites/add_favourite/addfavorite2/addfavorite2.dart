@@ -1,14 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class addfavorite2 extends StatelessWidget {
+class Addfavorite2 extends StatefulWidget {
   final TextEditingController nameController;
   final TextEditingController? addressController;
   final TextEditingController? linkController;
   final bool isButtonEnabled;
 
-  const addfavorite2({
+  const Addfavorite2({
     required this.nameController,
     this.addressController,
     this.linkController,
@@ -16,6 +15,11 @@ class addfavorite2 extends StatelessWidget {
     super.key,
   });
 
+  @override
+  State<Addfavorite2> createState() => _AddFavorite2State();
+}
+
+class _AddFavorite2State extends State<Addfavorite2> {
   Widget _buildTextField(
       String label, TextEditingController controller, String hintText) {
     return Column(
@@ -57,20 +61,30 @@ class addfavorite2 extends StatelessWidget {
   Widget _buildAddButton(bool isEnabled) {
     return Padding(
       padding: EdgeInsets.only(bottom: 10.sp),
-      child: Container(
-        width: double.infinity,
-        height: 8.h,
-        decoration: BoxDecoration(
-          color: isEnabled ? const Color(0xff4664FF) : const Color(0xffAAAAAA),
-          borderRadius: BorderRadius.circular(40),
-        ),
-        child: Center(
-          child: Text(
-            'Add Favourite',
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w500),
+      child: GestureDetector(
+        onTap: isEnabled
+            ? () {
+                Navigator.pop(
+                  (context),
+                );
+              }
+            : null,
+        child: Container(
+          width: double.infinity,
+          height: 8.h,
+          decoration: BoxDecoration(
+            color:
+                isEnabled ? const Color(0xff4664FF) : const Color(0xffAAAAAA),
+            borderRadius: BorderRadius.circular(40),
+          ),
+          child: Center(
+            child: Text(
+              'Add Favourite',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500),
+            ),
           ),
         ),
       ),
@@ -84,14 +98,15 @@ class addfavorite2 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildTextField('Name', nameController, 'Name here'),
+          _buildTextField('Name', widget.nameController, 'Name here'),
           SizedBox(height: 2.h),
-          if (addressController != null)
-            _buildTextField('Address', addressController!, 'Address here'),
-          if (linkController != null)
-            _buildTextField('Link', linkController!, 'Link here'),
+          if (widget.addressController != null)
+            _buildTextField(
+                'Address', widget.addressController!, 'Address here'),
+          if (widget.linkController != null)
+            _buildTextField('Link', widget.linkController!, 'Link here'),
           const Spacer(),
-          _buildAddButton(isButtonEnabled),
+          _buildAddButton(widget.isButtonEnabled),
         ],
       ),
     );

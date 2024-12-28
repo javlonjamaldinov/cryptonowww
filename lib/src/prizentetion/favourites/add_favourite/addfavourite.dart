@@ -72,12 +72,12 @@ class _AddfavouriteState extends State<Addfavourite> {
             Expanded(
               child: TabBarView(
                 children: [
-                  addfavorite2(
+                  Addfavorite2(
                     nameController: _nameController,
                     addressController: _addressController,
                     isButtonEnabled: _isNameFilled && _isAddressFilled,
                   ),
-                  addfavorite2(
+                  Addfavorite2(
                     nameController: _nameController,
                     linkController: _linkController,
                     isButtonEnabled: _isNameFilled && _isLinkFilled,
