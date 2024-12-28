@@ -29,10 +29,101 @@ class Favourites extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.sp),
-        child: const Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [],
+        padding: EdgeInsets.symmetric(horizontal: 15.sp, vertical: 20.sp),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                height: 5.h,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: const Color(0xff0A1336),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.sp),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Amount of favourites',
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white54,
+                        ),
+                      ),
+                      const Spacer(),
+                      Text(
+                        '0',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 2.5.h,
+              ),
+              Container(
+                height: 9.h,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: const Color(0xff0A1336),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.sp, vertical: 15.sp),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/svg/svg56.svg',
+                            height: 2.h,
+                            width: 2.w,
+                          ),
+                          SizedBox(
+                            width: 2.w,
+                          ),
+                          Text(
+                            'Safely change',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const Spacer(),
+                          Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Colors.white38,
+                            size: 17.sp,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 1.h,
+                      ),
+                      Text(
+                        'https://safelychange.com/#/ru/partner=5002&sourc...',
+                        style: TextStyle(
+                          color: Colors.white54,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: Padding(

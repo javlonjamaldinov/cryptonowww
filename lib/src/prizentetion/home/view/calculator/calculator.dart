@@ -26,7 +26,7 @@ class Calculator extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         crossAxisSpacing: 35.sp,
-        mainAxisSpacing: 18.sp,
+        mainAxisSpacing: 16.5.sp,
       ),
       shrinkWrap: true,
       padding: const EdgeInsets.all(10),
