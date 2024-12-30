@@ -12,7 +12,7 @@ List<Unbording> contents = [
       image: 'assets/images/im1.png',
       title: 'Instant Conversion',
       discripton:
-          'Easily convert USD into your favorite\n cryptocurrencies with just a tap'),
+          'Easily convert USD into your favorite\n    cryptocurrencies with just a tap'),
   Unbording(
       image: 'assets/images/im2.png',
       title: 'Visualize the Market',
@@ -27,5 +27,5 @@ List<Unbording> contents = [
       image: 'assets/images/im4.png',
       title: 'Record all your P2P’s',
       discripton:
-          'EasilyRecord all your P2P transactions:\n who, when, and how much'),
+          'EasilyRecord all your P2P transactions:\n         who, when, and how much'),
 ];
