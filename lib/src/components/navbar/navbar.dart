@@ -17,7 +17,7 @@ class _NavbarViewState extends State<NavbarView> {
   final List<Widget> views = [
     const HomeView(),
     const Favourites(),
-    const SizedBox(),
+    const Transactions(),
     const SizedBox(),
   ];
 

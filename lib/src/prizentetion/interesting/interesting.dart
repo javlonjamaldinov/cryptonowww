@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ResponsiveSizer(
@@ -38,6 +44,41 @@ class _InterestingState extends State<Interesting> {
   int currentFactIndex = 0;
   int remainingFacts = 3;
   bool isDisabled = false;
+  bool isSyncedToday = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLastSyncTime();
+  }
+
+  // Load the last sync time from SharedPreferences
+  Future<void> _loadLastSyncTime() async {
+    final prefs = await SharedPreferences.getInstance();
+    final lastSyncTime = prefs.getInt('lastSyncTime') ?? 0;
+    final currentTime = DateTime.now().millisecondsSinceEpoch;
+
+    // Check if 24 hours have passed since the last sync
+    if (currentTime - lastSyncTime > 86400000) {
+      // 86400000 ms = 24 hours
+      setState(() {
+        isSyncedToday = false;
+        remainingFacts = 3;
+        isDisabled = false;
+      });
+    } else {
+      setState(() {
+        isSyncedToday = true;
+      });
+    }
+  }
+
+  // Save the current time to SharedPreferences after sync
+  Future<void> _saveLastSyncTime() async {
+    final prefs = await SharedPreferences.getInstance();
+    final currentTime = DateTime.now().millisecondsSinceEpoch;
+    await prefs.setInt('lastSyncTime', currentTime);
+  }
 
   void _onSyncPressed() {
     if (isDisabled) return;
@@ -51,6 +92,8 @@ class _InterestingState extends State<Interesting> {
         }
       }
     });
+
+    _saveLastSyncTime(); // Save the sync time when the user presses the button
   }
 
   @override
@@ -100,7 +143,9 @@ class _InterestingState extends State<Interesting> {
               child: Container(
                 height: 19.h,
                 width: MediaQuery.of(context).size.width,
-                color: const Color(0xff4674FF),
+                color: isSyncedToday
+                    ? const Color(0xff4674FF)
+                    : const Color(0xff007AFF),
                 child: Center(
                   child: Text(
                     remainingFacts == 0

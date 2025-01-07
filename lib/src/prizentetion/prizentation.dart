@@ -1,6 +1,12 @@
 export 'home/home.dart';
 export 'splash_screen/splash.dart';
-export 'ChooseCrypto/choose_crypto.dart';
 export 'favourites/favourites.dart';
 export 'favourites/add_favourite/addfavourite.dart';
 export 'favourites/add_favourite/addfavorite2/addfavorite2.dart';
+export 'favourites/edit_favourite/edit _favourite.dart';
+export 'favourites/edit_favourite/edit_favourite_code.dart';
+export 'transactions/transactions.dart';
+export 'transactions/add_transaction/add_transaction.dart';
+export 'transactions/add_transaction/add_transaction2/add_transaction2.dart';
+export 'transactions/edit_transaction/edit_transaction.dart';
+export 'transactions/edit_transaction/edit_transaction_code.dart';

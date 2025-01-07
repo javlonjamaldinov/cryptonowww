@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'calculator/calculator.dart';
 import 'homeview_container.dart';
 import 'view.dart';
 
@@ -90,19 +91,19 @@ class _HomeViewState extends State<HomeView> {
           Column(
             children: [
               _isSwapped
-                  ? const CryptoContainer(
+                  ? const HomeviewContainer(
                       amount: "0 bts",
                       imagePath: 'assets/images/im6.png',
                       currencyName: 'Bitcoin (BTC)',
                     )
-                  : CurrencyContainer(
+                  : HomeviewContainer(
                       amount: _output,
                       imagePath: 'assets/images/im5.png',
                       currencyName: 'US Dollar',
                     ),
               SizedBox(height: 2.h),
               _isSwapped
-                  ? CurrencyContainer(
+                  ? HomeviewContainer(
                       amount: _output,
                       imagePath: 'assets/images/im5.png',
                       currencyName: 'US Dollar',
@@ -143,4 +144,3 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
-
